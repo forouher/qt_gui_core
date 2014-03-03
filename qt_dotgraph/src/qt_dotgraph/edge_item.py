@@ -137,13 +137,14 @@ class EdgeItem(GraphItem):
     def set_color(self, color=None):
         if color is None:
             self._label_pen.setColor(self._default_text_color)
+    	    self._brush.setColor(self._default_text_color)
 	else:
             self._label_pen.setColor(color)
+            self._brush.setColor(color)
 
         if color is None:
             color = self._default_color
 
-        self._brush.setColor(color)
         self._edge_pen.setColor(color)
 
         self._path.setPen(self._edge_pen)
